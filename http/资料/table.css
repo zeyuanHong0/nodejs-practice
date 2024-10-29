@@ -1,0 +1,11 @@
+td {
+    width: 100px;
+    height: 80px;
+    background: #bfa;
+    cursor: pointer;
+}
+
+/* 高亮样式 */
+.highlight {
+    background-color: yellow;
+}
