@@ -7,20 +7,20 @@ const server = http.createServer((req, res) => {
   const cssPath = path.join(__dirname, '../资料/table.css');
   const jsPath = path.join(__dirname, '../资料/table.js');
   const { pathname } = new URL(req.url, 'http://127.0.0.1');
-  console.log(pathname);
+  // console.log(pathname);
   if (pathname === '/') {
     fs.readFile(htmlPath, 'utf8', (err, data) => {
-      res.writeHead(200, { 'Content-Type': 'text/html' });
+      // res.writeHead(200, { 'Content-Type': 'text/html' });
       res.end(data);
     })
   } else if (pathname === '/table.css') {
     fs.readFile(cssPath, 'utf8', (err, data) => {
-      res.writeHead(200, { 'Content-Type': 'text/css' });
+      // res.writeHead(200, { 'Content-Type': 'text/css' });
       res.end(data);
     })
   } else if (pathname === '/table.js') {
     fs.readFile(jsPath, 'utf8', (err, data) => {
-      res.writeHead(200, { 'Content-Type': 'text/javascript' });
+      // res.writeHead(200, { 'Content-Type': 'text/javascript' });
       res.end(data);
     })
   } else {
