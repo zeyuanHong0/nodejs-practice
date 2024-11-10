@@ -26,9 +26,12 @@ const mimes = {
 }
 
 const server = http.createServer((req, res) => {
-  // const htmlPath = path.join(__dirname, '../资料/table.html');
-  // const cssPath = path.join(__dirname, '../资料/table.css');
-  // const jsPath = path.join(__dirname, '../资料/table.js');
+  // 判断请求方式
+  if (req.method !== 'GET') {
+    res.statusCode = 405;
+    res.end('<h1>405 Method Not Allowed</h1>');
+    return;
+  }
   const { pathname } = new URL(req.url, 'http://127.0.0.1');
   const filePath = path.join(__dirname, 'page', pathname);
   console.log('filePath', filePath);
@@ -36,10 +39,21 @@ const server = http.createServer((req, res) => {
     const ext = path.extname(filePath).slice(1);
     const type = mimes[ ext ] || 'application/octet-stream';
     console.log('type', type);
-    res.setHeader('Content-Type', `${type}; charset=utf-8`);
+    res.setHeader('Content-Type', `${ type }; charset=utf-8`);
     if (err) {
-      res.setStatusCode = 404;
-      res.end('<h1>404 Not Found</h1>');
+      switch (err.code) {
+        case 'ENOENT':
+          res.statusCode = 404;
+          res.end('<h1>404 Not Found</h1>');
+          break;
+        case 'EACCES':
+          res.statusCode = 403;
+          res.end('<h1>403 Forbidden</h1>');
+          break;
+        default:
+          res.statusCode = 500;
+          res.end('<h1>500 Internal Server Error</h1>');
+      }
     } else {
       res.end(data);
     }
