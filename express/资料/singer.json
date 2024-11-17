@@ -1,0 +1,27 @@
+[
+  {
+    "id": "1",
+    "name": "Taylor Swift",
+    "avatar": "https://img2.baidu.com/it/u=3159948785,3062299923&fm=253&fmt=auto&app=120&f=JPEG?w=800&h=800g"
+  },
+  {
+    "id": "2",
+    "name": "Ed Sheeran",
+    "avatar": "https://img2.baidu.com/it/u=941837949,317010415&fm=253&fmt=auto&app=120&f=JPEG?w=800&h=800"
+  },
+  {
+    "id": "3",
+    "name": "Adele",
+    "avatar": "https://img2.baidu.com/it/u=1200062669,459163576&fm=253&fmt=auto&app=120&f=JPEG?w=800&h=800"
+  },
+  {
+    "id": "4",
+    "name": "Bruno Mars",
+    "avatar": "https://img0.baidu.com/it/u=3971946579,1987054006&fm=253&fmt=auto&app=120&f=JPEG?w=800&h=800"
+  },
+  {
+    "id": "5",
+    "name": "Ariana Grande",
+    "avatar": "https://img2.baidu.com/it/u=4216380424,1781104705&fm=253&fmt=auto&app=120&f=JPEG?w=800&h=800"
+  }
+]
